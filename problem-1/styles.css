@@ -1,37 +1,32 @@
+
+* {
+    margin: 0px;
+}
 .flex-grid {
     display: flex;
-    gap: 20px;
-    flex-direction: row;
+    flex-wrap: wrap;
 }
-.flex-grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 5px;
-}
-.flex-grid .col {
-    width: 25%;
-  }
 
-.flex-grid-2 > div {
-    border: 1px solid black;
-    font-size: 2vw;
-    padding: 8px;
+.col > div {
+    background-color: red;
 }
 
 .col {
+display: flex;
 background: rgb(214, 104, 40);
-padding: 20px;
+flex-grow: 0.25;
+border: 1px solid black;
+padding: 15px;
 }
 
 @media (max-width: 720px) {
-    .flex-grid {
-        flex-wrap: wrap;
-        gap:15px;
+    .col{
+        width: 45%;
     }
   }
 
 @media (max-width: 360px) {
-    .flex-grid {
-        flex-direction: column;
+    .col{
+        width:100%
     }
   }
