@@ -24,8 +24,6 @@ function eventListeners(){
     noteListDiv.addEventListener("click", noteActions);
    
   }
-  
-  
   eventListeners();
 
 // get item from storage 
@@ -124,8 +122,9 @@ function displayNotes(){
 }
 
 
-// delete a note 
+// note actions
 function noteActions(e){
+  //delete note
   if (e.target.classList.contains("delete-note-btn")) {
     e.target.parentElement.remove();
     let divID = e.target.parentElement.dataset.id;
@@ -135,6 +134,7 @@ function noteActions(e){
     });
     localStorage.setItem("notes", JSON.stringify(newNotesList));
   }
+  //change colours
   if(e.target.classList.contains("blue-note-btn")){
     e.target.parentElement.style.backgroundColor = "#7ec4cf";
   }
@@ -144,6 +144,7 @@ function noteActions(e){
   if(e.target.classList.contains("green-note-btn")){
     e.target.parentElement.style.backgroundColor = "#98b08b";
   }
+  //edit note
   if(e.target.classList.contains('edit-note-btn')){
     isEdited = true;
     let divID = e.target.parentElement.dataset.id;
@@ -162,17 +163,4 @@ function noteActions(e){
     console.log(isEdited);
     console.log(targetNote[0].id, targetNote[0].title, targetNote[0].content);
   }
-}
-
-
-// delete all notes 
-function deleteAllNotes(){
-  localStorage.removeItem("notes");
-  let noteList = document.querySelectorAll(".note-item");
-  if(noteList.length > 0){
-    noteList.forEach(item => {
-      noteListDiv.removeChild(item);
-    });
-  }
-  noteID = 1 //resetting noteID to 1
 }

@@ -121,8 +121,3 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-/*** alert ***/
-.warning {
-  border-color: rgba(255, 111, 89, 0.8) !important;
-}
