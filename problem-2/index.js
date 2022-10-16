@@ -46,26 +46,33 @@ function addNewNote(){
     if(noteTitle.value || noteContent.value){
         
         let notes = getDataFromStorage();
+        const notes2  = [...notes]
         let noteItem;
         
         if(!isEdited){
             noteItem = new Note(noteID, noteTitle.value, noteContent.value);
             console.log(noteItem);
-            notes.push(noteItem);
+            notes2.push(noteItem);
             noteID++;
             createNote(noteItem);
-            saveNotes(notes);
+            saveNotes(notes2);
         } else {
             isEdited = false;
-            const targetNote = notes.filter(item => {
+            const targetNote = notes2.filter(item => {
               return item.id == editId;
             });
             console.log(targetNote);
             targetNote.title = noteTitle.value;
             targetNote.content = noteContent.value;
-            console.log(targetNote);
-            console.log(notes);
-            saveNotes(notes);
+            notes2.forEach(item => {
+              if(item.id == editId) {
+                item.title = noteTitle.value;
+                item.content = noteContent.value;
+              }
+            })
+            console.log(notes2);
+            saveNotes(notes2);
+            displayNotes();
         }
         
         
@@ -75,6 +82,7 @@ function addNewNote(){
 }
 // saving in the local storage 
 function saveNotes(notes){
+  console.log(notes);
   localStorage.setItem("notes", JSON.stringify(notes));
   noteTitle.value = "";
   noteContent.value = "";
@@ -109,6 +117,7 @@ function displayNotes(){
   }else {
     noteID = 1;
   }
+  noteListDiv.innerHTML = ""
   notes.forEach(item => {
     createNote(item);
   });
