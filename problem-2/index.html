@@ -1,85 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel = "stylesheet" type="text/css" href = "styles.css" />
-</head>
-<body>
-    <div id="app">
-        <div class="container">
-            <button class="addNote">New Note</button>
+  </head>
+  <body>
+    <div class="popup-box">
+        <div class="popup">
+          <div class="content">
+            <header>
+              <p></p>
+              <i class="uil uil-times"></i>
+            </header>
+            <form action="#">
+              <div class="row title">
+                <label>Title</label>
+                <input type="text" spellcheck="false">
+              </div>
+              <div class="row description">
+                <label>Description</label>
+                <textarea spellcheck="false"></textarea>
+              </div>
+              <button></button>
+            </form>
+          </div>
         </div>
-        <div class="notes-section">
-            <div class="note" class="firstNote">
-                <textarea>lorem ipsum dolor sit amet</textarea>
-                <div class="color-picker">
-                    <button class="redBtn"></button>
-                    <button class="greenBtn"></button>
-                    <button class="blueBtn"></button>
-                </div>
-            </div>
-            <!-- 
-            <div class="note">
-                lorem ipsum dolor sit amet
-                <div class="color-picker">
-                    <button class="redBtn"></button>
-                    <button class="greenBtn"></button>
-                    <button class="blueBtn"></button>
-                </div>
-            </div>
-            <div class="note">
-                lorem ipsum dolor sit amet
-                <div class="color-picker">
-                    <button class="redBtn"></button>
-                    <button class="greenBtn"></button>
-                    <button class="blueBtn"></button>
-                </div>
-            </div>
-            <div class="note">
-                lorem ipsum dolor sit amet
-                <div class="color-picker">
-                    <button class="redBtn"></button>
-                    <button class="greenBtn"></button>
-                    <button class="blueBtn"></button>
-                </div>
-            </div>
-            <div class="note">
-                lorem ipsum dolor sit amet
-                <div class="color-picker">
-                    <button class="redBtn"></button>
-                    <button class="greenBtn"></button>
-                    <button class="blueBtn"></button>
-                </div>
-            </div>
-            <div class="note">
-                lorem ipsum dolor sit amet
-                <div class="color-picker">
-                    <button class="redBtn"></button>
-                    <button class="greenBtn"></button>
-                    <button class="blueBtn"></button>
-                </div>
-            </div>
-            <div class="note">
-                lorem ipsum dolor sit amet
-                <div class="color-picker">
-                    <button class="redBtn"></button>
-                    <button class="greenBtn"></button>
-                    <button class="blueBtn"></button>
-                </div>
-            </div>
-            <div class="note">
-                lorem ipsum dolor sit amet
-                <div class="color-picker">
-                    <button class="redBtn"></button>
-                    <button class="greenBtn"></button>
-                    <button class="blueBtn"></button>
-                </div>
-            </div> -->
+      </div>
+    <div class="note">
+        <h2>Note Taking App</h2>
+        <div class="note-input">
+          <h3 class="title">Add A New Note</h3>
+          <div class="note-wrapper">
+            <input type="text" id = "note-title" placeholder="Cool title here">
+            <textarea  id="note-content" placeholder="Useful notes go here" rows="5"></textarea>
+            <button id="add-note-btn" class="btn" type = "button">Add Note</button>
+          </div>
         </div>
-    </div>
-</body>
-<script src="index.js"></script>
-</html>
+        
+        <div class="note-list">
+          
+        </div>
+        
+      </div>
+    <script type="text/javascript" src=index.js></script>
+  </body>
+  </html>
